@@ -1,0 +1,29 @@
+#javaj#
+
+    <frames> oConso
+    
+#listix#
+
+   <main>
+      micohttp, START, monoMico
+      
+   <OPORTO> MICO, GET PORT, monoMico
+
+   <GET />
+     //<html><body>
+     //  <pre> 
+     //      server name: @<:lsx host name>
+     //      server IP  : @<:lsx host ip>
+     //      client IP  : @<_requestIP>
+     //  </pre>
+     //
+     //  <p>Set one of these addresses in a browser and I'll tell you your IP<p>
+     //  <pre> 
+     //      http://@<:lsx host name>:@<OPORTO>
+     //      http://@<:lsx host ip>:@<OPORTO>
+     //  </pre>
+     //
+     //  YOUR IP IS : @<_requestIP>
+     //
+     //</body></html>
+

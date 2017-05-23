@@ -1,0 +1,45 @@
+#javaj#
+
+   <layout of main>
+        EVA, 8, 8, 11, 11
+
+        ---, X         
+           , bNew Event
+           , h1Boletin Board
+         X , dBoletin
+
+   <layout of layInput>
+        EVA, 15, 15, 6, 6
+
+        ---,   X        , X
+           , lNew Event , bCancel
+           , eEventDate , eEventTitle
+         X , xEventDesc , -
+           , bSave      , -
+
+#data#
+
+   <eEventDate type>   //date
+
+#listix#
+   
+   <main>
+      //AJAXgetDataForId ("dBoletin");
+
+   <-- bNew Event>
+       //setData ("eEventDate", "");
+       //setData ("eEventTitle", "");
+       //setData ("xEventDesc", "");
+       //mask ("main", "layInput");
+   
+   <-- bCancel>
+      //unmask ("main");
+   
+   <-- bSave>
+      //AJAXSend ("insertEvent");
+   
+   <-- ajaxResponse insertEvent>
+      //unmask ("main");
+      //AJAXgetDataForId ("dBoletin");
+
+#**#

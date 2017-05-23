@@ -1,0 +1,72 @@
+#javaj#
+
+    <frames> oConsola
+
+#listix#
+
+   <FIDIR> filesForDownload
+
+   <main>
+      micohttp, start, mymico
+      CHECK, DIR, filesUpload, GEN, filesUpload/.createdir, :lsx date
+
+   <GET />
+     //<html> <style> * { font-family: Tahoma } </style> <body>
+     //<script>
+     //
+     //@<:infile META-GASTONA/js/jGastonaEva-min.js>
+     //
+     //    jGastona (evaFileUTF82obj ("@<:solve-encode-utf8 MAIN_JAST>"));
+     //
+     //</script>
+     //</body></html>
+
+   <MAIN_JAST>
+      //#javaj#
+      //
+      //   <layout of main>
+      //      EVA, 12, 12, 8, 8
+      //
+      //         , X
+      //         , lFileDir
+      //       X , dFileList
+      //         , lUpload a file
+      //         , uSelectUpFile
+      //         , bUpload
+      //
+      //#data#
+      //
+      //    <lFileDir> //Available files from <b>@<FIDIR></b>
+      //
+      //#listix#
+      //
+      //   <main>
+      //      //AJAXgetDataForId ("dFileList");
+      //
+      //   <-- bUpload>
+      //      //if (canUploadFile ("uSelectUpFile", 500)) {
+      //      //   if (AJAXUploadFile ("uSelectUpFile", "uploadFile")) {
+      //      //      setData ("bUpload", "uploading ...");
+      //      //   }
+      //      //}
+      //
+      //   <-- ajaxResponse uploadFile>
+      //      //setData ("bUpload", "Upload file");
+
+   <POST /getDataForId>
+     // <table>
+     //
+     LOOP, FILES, @<FIDIR>
+         , RECURSIVE, 0
+         , BODY     , // <tr>
+         , BODY     , //     <td> <a href="@<FIDIR>/@<fileName>"> @<fileName> </a>
+         , BODY     , // </tr>
+     //
+     // </table>
+
+   <POST /uploadFile>
+     CHECK, VAR, _uploadedFile0, nok
+     CHECK, FILE, @<_uploadedFile0>, nok
+     ok
+
+#**#

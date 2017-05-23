@@ -1,0 +1,66 @@
+#javaj#
+
+    <frames> oConsola
+
+#listix#
+
+   <main>
+      DB CONFIG, DEFAULT, daba.db
+      DB,, EXECUTE, @<SQL_CREATE_DB>
+      micohttp, start, mymico
+
+   <GET />
+     //<html><style> * { font-family: Tahoma; font-size: 26px;  } </style><body><script>
+     //
+     //@<:infile META-GASTONA/js/jGastonaEva-min.js>
+     //
+     //   var jgas = jGastona (evaFileUTF82obj ("@<:solve-encode-utf8 MAIN_JAST>"));
+     //
+     //</script></body></html>
+
+   <MAIN_JAST>
+      @<:infile Boletin.JAST>
+
+   <POST /insertEvent>
+      LSX, StoreRecord,
+         , LOAD DATA, @<_bodyMemFileName>
+      //ok
+
+   <StoreRecord>
+      DB,, EXECUTE, @<SQL_INSERT_EVENT>
+
+   <DEL_COMMAND> //jgas.AJAXgetDataForId ('dBoletin', 'removeId=@<id>');
+
+   <POST /getDataForId>
+      LSX, checkRemoveId
+      //<table width="100%" border="1" cellpadding="13">
+      //
+      LOOP, SQL,, //SELECT * FROM boletin LIMIT 50
+          ,, //      <tr> <td> @<date>
+          ,, //           <td> @<:decode-utf8 title>
+          ,, //           <td> <button onclick="@<DEL_COMMAND>">Delete</button>
+          ,, //      </tr>
+          ,, //      <tr> <td colspan="3" class="viewEventDesc"> <pre>@<:decode-utf8 eventdesc></pre>
+          ,, //      </tr>
+      //
+      //</table>
+
+   <checkRemoveId>
+      CHECK, VAR, removeId
+      DB,, EXECUTE, @<SQL_DELETE_ITEM>
+
+   <SQL_CREATE_DB>
+       //CREATE TABLE IF NOT EXISTS boletin (
+       //      id INTEGER PRIMARY KEY AUTOINCREMENT,
+       //      date,
+       //      title,
+       //      eventdesc);
+
+   <SQL_INSERT_EVENT>
+       //INSERT INTO boletin (date, title, eventdesc)
+       //    VALUES ('@<:encode eEventDate>',
+       //            '@<:encode eEventTitle>',
+       //            '@<:encode xEventDesc>');
+
+   <SQL_DELETE_ITEM>
+      //DELETE FROM boletin WHERE id = @<removeId> ;

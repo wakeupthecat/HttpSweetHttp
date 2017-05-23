@@ -1,0 +1,18 @@
+ #javaj#
+
+      <frames> oConsola
+
+  #listix#
+
+     <main>
+          MICO, START, myFirstServer
+
+     <GET />
+        //<html>
+        //    First page! <a href="/nextPage.html">Go to a second page</a>
+        //</html>
+
+     <GET /nextPage.html>
+        //<html>
+        //    2nd page <a href="/">Go to the first one</a>
+        //</html>

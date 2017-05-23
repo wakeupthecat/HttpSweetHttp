@@ -1,0 +1,52 @@
+#javaj#
+
+    <frames> oConso
+
+#data#
+
+   <NN> 0
+
+   <SHOT_NN_PNG> //cache/screenshot_@<NN>.png
+
+#listix#
+
+   <main>
+      micohttp, start, monoMico
+
+   <GET />
+     //<html><body>
+     //<script>
+     //
+     //@<:infile META-GASTONA/js/jGastonaEva-min.js>
+     //
+     //   var jgas = jGastona (evaFileUTF82obj ("@<:encode-utf-8 JAST>"));
+     //
+     //</script>
+     //</body></html>
+
+   <JAST>
+      //#javaj#
+      //
+      //   <layout of main>
+      //      EVA, 12, 12, 8, 8
+      //
+      //         , X
+      //         , bScreenshot
+      //       X , mImagen
+      //
+      //#listix#
+      //
+      //   <-- bScreenshot>
+      //      //AJAXgetDataForId ("mImagen");
+
+   <POST /getDataForId>
+       LSX, REMOVE_OLD_SHOT
+       NUM=, NN, NN + 1
+       SCREEN, @<SHOT_NN_PNG>, png
+       @<SHOT_NN_PNG>
+
+   <REMOVE_OLD_SHOT>
+      CHECK, LINUX, CALL, //CMD /C del @<:path SHOT_NN_PNG>
+      CALL, //rm @<SHOT_NN_PNG>
+
+#**#
