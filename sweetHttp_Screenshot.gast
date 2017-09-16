@@ -15,29 +15,33 @@
 
    <GET />
      //<html><body>
+     //
+     //<script id="mainJast" type="jast">
+     //
+     //   #javaj#
+     //   
+     //      <layout of main>
+     //         EVA, 12, 12, 8, 8
+     //   
+     //            , X
+     //            , bScreenshot
+     //          X , mImagen
+     //   
+     //   #listix#
+     //   
+     //      <-- bScreenshot>
+     //         //AJAXgetDataForId ("mImagen");
+     //
+     //</script>
+     //
      //<script>
      //
      //@<:infile META-GASTONA/js/jGastonaEva-min.js>
      //
-     //   var jgas = jGastona (evaFileUTF82obj ("@<:encode-utf-8 JAST>"));
+     //   jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
      //
      //</script>
      //</body></html>
-
-   <JAST>
-      //#javaj#
-      //
-      //   <layout of main>
-      //      EVA, 12, 12, 8, 8
-      //
-      //         , X
-      //         , bScreenshot
-      //       X , mImagen
-      //
-      //#listix#
-      //
-      //   <-- bScreenshot>
-      //      //AJAXgetDataForId ("mImagen");
 
    <POST /getDataForId>
        LSX, REMOVE_OLD_SHOT

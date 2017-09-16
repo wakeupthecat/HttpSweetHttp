@@ -12,11 +12,16 @@
 
    <GET />
      //<html> <style> * { font-family: Tahoma } </style> <body>
+     //
+     //<script id="mainJast" type="jast">
+     //@<MAIN_JAST>
+     //</script>
+     //
      //<script>
      //
      //@<:infile META-GASTONA/js/jGastonaEva-min.js>
      //
-     //    jGastona (evaFileUTF82obj ("@<:solve-encode-utf8 MAIN_JAST>"));
+     //   jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
      //
      //</script>
      //</body></html>

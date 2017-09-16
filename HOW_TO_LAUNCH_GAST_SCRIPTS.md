@@ -1,4 +1,4 @@
-# How to launch the gast samples 
+# All the ways to lauch gastona scripts
 
 ## Gastona binary (jar)
 
@@ -10,7 +10,7 @@ that you can found in the subdirectory BUILD if you clone or fork the github
 project (just donwloading the jar seems not to work !) or get an updated
 copy from https://sourceforge.net/projects/gastona/
 
-Of course java version > 1.5 needs to be installed as well.
+In order to launch gastona.jar the computer has to have installed a version of java (jre) greater than 1.5.
 
 ## Launching gast scripts
 
@@ -47,7 +47,41 @@ I've written a small tool in C++ to help me having associations in windows in a 
 If you use to struggle with this issue as well, take a look at it in https://github.com/wakeupthecat/lanzaras
 for me it has been "THE SOLUTION".
 
-     
+### Installing gastona in Linux
+
+Suposing you have downloaded gastona.jar and you are in the same directory, these are
+the steps I use to follow
+
+      sudo cp gastona.jar /usr/lib
+      sudo chmod 777 /usr/lib/gastona.jar
+
+then create a file named gastona with the content
+
+      #!/bin/sh
+      exec "java" -jar /usr/lib/gastona.jar "$@"
+
+copy it to /usr/bin and change the permissions
+
+      sudo cp gastona /usr/bin
+      sudo chmod 777 /usr/bin/gastona
+
+now we can run any gast script by simply typing
+
+       gastona myscript.gast
+ 
+or, if the first line of the gast file is
+
+       #!/usr/bin/gastona
+
+it can be launched from terminal with
+
+       ./myscript.gast
+
+Finally, in order to be able to launch a gast script from the file explorer, the
+option "Run executable text files when they are opened" has to be
+set in Edit / Preferences / Behavior.
+
+
 ### Using autoStart.gast
    
 Having gastona.jar in the directory make a file called autoStart.gast with either the

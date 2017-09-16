@@ -10,16 +10,19 @@
       micohttp, start, mymico
 
    <GET />
-     //<html><style> * { font-family: Tahoma; font-size: 26px;  } </style><body><script>
+     //<html><style> * { font-family: Tahoma; font-size: 26px;  } </style><body>
+     //
+     //<script id="mainJast" type="jast">
+     //@<:infile Boletin.JAST>
+     //</script>
+     //
+     //<script>
      //
      //@<:infile META-GASTONA/js/jGastonaEva-min.js>
      //
-     //   var jgas = jGastona (evaFileUTF82obj ("@<:solve-encode-utf8 MAIN_JAST>"));
+     //   var jgas = jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
      //
      //</script></body></html>
-
-   <MAIN_JAST>
-      @<:infile Boletin.JAST>
 
    <POST /insertEvent>
       LSX, StoreRecord,
