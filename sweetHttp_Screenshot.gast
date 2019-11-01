@@ -38,7 +38,8 @@
      //
      //@<:infile META-GASTONA/js/jGastonaEva-min.js>
      //
-     //   jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
+     //   var jast = jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
+     //   jast.run ();
      //
      //</script>
      //</body></html>
