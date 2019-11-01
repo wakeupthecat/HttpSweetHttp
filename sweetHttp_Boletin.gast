@@ -21,6 +21,7 @@
      //@<:infile META-GASTONA/js/jGastonaEva-min.js>
      //
      //   var jgas = jGastona (evaFileStr2obj (document.getElementById ("mainJast").text));
+     //   jgas.run ();
      //
      //</script></body></html>
 
